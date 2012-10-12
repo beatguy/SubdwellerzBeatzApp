@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <script type="text/javascript">
+         var screen_width = 320;
+ var screen_height = 480;
+        </script>
+        <title>
+            WACPaymentAuthorization
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"
+        />
+        <link href="files/resources/themes/dark-gray/dark-gray.css" rel="stylesheet" />
+        <link href="files/resources/lib/jquerymobile/1.1.0/jquery.mobile.structure-1.1.0.css"
+        rel="stylesheet" />
+        <script type="text/javascript" src="files/resources/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-1.6.4.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/jquery.mobile.iepatch.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/1.1.0/jquery.mobile-1.1.0.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/tiggzi.js">
+        </script>
+        <link href="files/resources/css/mobilebase.css" rel="stylesheet" type="text/css"
+        />
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentEncryption.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/childBrowser.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentrandomUUID.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentItems.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentViewportLocation.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentO2SecurityContext.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="WACPaymentAuthorization" id="j_19"
+        class="type-interior" data-theme='a'>
+            <div data-role="header" data-position='fixed' data-theme='a' name="mobileheader5"
+            id="j_21" class=' mobileheader3 '>
+                <h1 dsid="mobileheader5">
+                    Payment
+                </h1>
+            </div>
+            <div data-role="content" id="j_22" name="mobilecontainer5" class="mobilecontainer3"
+            dsid="mobilecontainer5" data-theme='a'>
+                <link href="WACPaymentAuthorization.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="WACPaymentAuthorization.js">
+                </script>
+                <div name="waitLabel" id="j_23" dsid="waitLabel" data-role="tiggr_label" class=' mobilelabel1 '>
+                    Please wait....
+                </div>
+                <div name="failLabel" id="j_24" dsid="failLabel" data-role="tiggr_label" class=' mobilelabel2 '>
+                    Authorization fail
+                </div>
+                <div name="successLabel" id="j_25" dsid="successLabel" data-role="tiggr_label" class=' mobilelabel3 '>
+                    Payment processed!
+                </div>
+                <div class="mobilegrid1_wrapper">
+                    <table id="j_26" class="mobilegrid1" dsid="resultGrid" name="resultGrid" cellpadding=0
+                    cellspacing=0>
+                        <col style="width:42.1%;">
+                            <col style="width:57.9%;">
+                                <tr>
+                                    <td id="j_27" name="mobilegridcell18" class="mobilegridcell1" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                        </div>
+                                    </td>
+                                    <td id="j_28" name="mobilegridcell19" class="mobilegridcell2" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="j_29" name="mobilegridcell23" class="mobilegridcell3" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="mobilelabel27" id="j_30" dsid="mobilelabel27" data-role="tiggr_label"
+                                            class=' mobilelabel4 '>
+                                                total amount charged:
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="j_31" name="mobilegridcell24" class="mobilegridcell4" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="amountLabel" id="j_32" dsid="amountLabel" data-role="tiggr_label" class=' mobilelabel5 '>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="j_33" name="mobilegridcell25" class="mobilegridcell5" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="mobilelabel28" id="j_34" dsid="mobilelabel28" data-role="tiggr_label"
+                                            class=' mobilelabel6 '>
+                                                currency:
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="j_35" name="mobilegridcell26" class="mobilegridcell6" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="currencyLabel" id="j_36" dsid="currencyLabel" data-role="tiggr_label"
+                                            class=' mobilelabel7 '>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="j_37" name="mobilegridcell27" class="mobilegridcell7" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="mobilelabel29" id="j_38" dsid="mobilelabel29" data-role="tiggr_label"
+                                            class=' mobilelabel8 '>
+                                                reference code:
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="j_39" name="mobilegridcell28" class="mobilegridcell8" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="rCodeLabel" id="j_40" dsid="rCodeLabel" data-role="tiggr_label" class=' mobilelabel9 '>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="j_41" name="mobilegridcell29" class="mobilegridcell9" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="mobilelabel18" id="j_42" dsid="mobilelabel18" data-role="tiggr_label"
+                                            class=' mobilelabel10 '>
+                                                server reference code:
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="j_43" name="mobilegridcell30" class="mobilegridcell10" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="srCodeLabel" id="j_44" dsid="srCodeLabel" data-role="tiggr_label" class=' mobilelabel11 '>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="j_45" name="mobilegridcell14" class="mobilegridcell11" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="mobilelabel30" id="j_46" dsid="mobilelabel30" data-role="tiggr_label"
+                                            class=' mobilelabel12 '>
+                                                transaction status:
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td id="j_47" name="mobilegridcell15" class="mobilegridcell12" colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <div name="statusLabel" id="j_48" dsid="statusLabel" data-role="tiggr_label" class=' mobilelabel13 '>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                    </table>
+                </div>
+            </div>
+            <div data-role="footer" class="mobilefooter3" name="mobilefooter5" dsid="mobilefooter5"
+            data-position="fixed" id="j_49" data-theme='a'>
+                <div class="mobilebutton2_wrapper ">
+                    <a data-role="button" name="btnBack" dsid="btnBack" class=' mobilebutton2' style='margin-left:5px; '
+                    id='j_50' data-inline='true' data-theme='a' tabIndex="1">
+                    Back to Product List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
