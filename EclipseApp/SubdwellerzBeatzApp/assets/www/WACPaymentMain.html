@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            WACPaymentMain
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"
+        />
+        <link href="res/themes/dark-gray/dark-gray.css" rel="stylesheet" />
+        <link href="res/lib/jquerymobile/1.1.0/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.6.4.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/jquery.mobile.iepatch.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.1.0/jquery.mobile-1.1.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/tiggzi.js">
+        </script>
+        <script type="text/javascript" src="res/lib/cordova.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentEncryption.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/childBrowser.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentrandomUUID.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentItems.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentViewportLocation.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentO2SecurityContext.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="WACPaymentMain" id="j_86"
+        class="type-interior" data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="header" data-position='fixed' data-theme='a' name="mobileheader1"
+            id="j_88" class=' mobileheader5 '>
+                <h1 dsid="mobileheader1">
+                    Product list
+                </h1>
+            </div>
+            <div data-role="content" id="j_89" name="mobilecontainer1" class="mobilecontainer5"
+            dsid="mobilecontainer1" data-theme='a'>
+                <link href="WACPaymentMain.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="WACPaymentMain.js">
+                </script>
+                <div name="mobilelabel18" id="j_90" dsid="mobilelabel18" data-role="tiggr_label"
+                class=' mobilelabel24 '>
+                    Note that the prices might not include taxes
+                </div>
+                <div class="mobilelist1_wrapper">
+                    <ul data-role="listview" id="j_91" class=' mobilelist1 ' name="mobilelist1" dsid="mobilelist1"
+                    data-filter-placeholder='' data-theme='a' data-divider-theme='b' data-count-theme='b'
+                    style="">
+                        <li id="j_92" name="mobilelistitem1" dsid="mobilelistitem1" class=' mobilelistitem1 '>
+                            <div class="mobilegrid3_wrapper">
+                                <table id="j_93" class="mobilegrid3" dsid="mobilegrid4" name="mobilegrid4" cellpadding=0
+                                cellspacing=0>
+                                    <col style="width:11.8%;">
+                                        <col style="width:21%;">
+                                            <col style="width:67.2%;">
+                                                <tr>
+                                                    <td id="j_94" name="mobilegridcell20" class="mobilegridcell25" colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <div class="mobileimage4_div">
+                                                                <img class="mobileimage4" src="files/views/assets/image/ajax_loader2.gif" id="j_95"
+                                                                dsid="itemImage" name="itemImage" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td id="j_96" name="mobilegridcell12" class="mobilegridcell26" colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <div name="product_name" id="j_97" dsid="product_name" data-role="tiggr_label" class=' mobilelabel25 '>
+                                                                product name
+                                                            </div>
+                                                            <div name="product_id" id="j_98" dsid="product_id" data-role="tiggr_label" class=' mobilelabel26 '>
+                                                                id
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td id="j_99" name="mobilegridcell13" class="mobilegridcell27" colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <div name="currency" id="j_100" dsid="currency" data-role="tiggr_label" class=' mobilelabel27 '>
+                                                                USD
+                                                            </div>
+                                                            <div name="price" id="j_101" dsid="price" data-role="tiggr_label" class=' mobilelabel28 '>
+                                                                price
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                </table>
+                            </div>
+                            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow extra">
+                            </span>
+                            <div style="clear: both; visibility: hidden; line-height: 0; height: 0;">
+                                .
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="footer" class="mobilefooter5" name="mobilefooter1" dsid="mobilefooter1"
+            data-position="fixed" id="j_102" data-theme='a'>
+            </div>
+        </div>
+    </body>
+
+</html>

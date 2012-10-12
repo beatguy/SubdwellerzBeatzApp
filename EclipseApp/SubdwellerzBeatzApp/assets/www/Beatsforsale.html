@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            Beatsforsale
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"
+        />
+        <link href="res/themes/dark-gray/dark-gray.css" rel="stylesheet" />
+        <link href="res/lib/jquerymobile/1.1.0/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
+        />
+        <script type="text/javascript" src="res/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquery/jquery-1.6.4.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/jquery.mobile.iepatch.js">
+        </script>
+        <script type="text/javascript" src="res/lib/jquerymobile/1.1.0/jquery.mobile-1.1.0.js">
+        </script>
+        <script type="text/javascript" src="res/lib/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="res/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="res/lib/base/tiggzi.js">
+        </script>
+        <script type="text/javascript" src="res/lib/cordova.js">
+        </script>
+        <script type="text/javascript" src="res/lib/childbrowser.js">
+        </script>
+        <link href="res/css/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentEncryption.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/childBrowser.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentrandomUUID.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentItems.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentViewportLocation.js">
+        </script>
+        <script type="text/javascript" src="files/views/assets/js/WACPaymentO2SecurityContext.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="Beatsforsale" id="j_117" class="type-interior"
+        data-theme='a' data-add-back-btn="false" data-back-btn-text="Back">
+            <div data-role="header" data-position='fixed' data-theme='a' name="mobileheader1"
+            id="j_119" class=' mobileheader7 '>
+                <h1 dsid="mobileheader1">
+                    Beats for Sale
+                </h1>
+            </div>
+            <div data-role="content" id="j_120" name="mobilecontainer1" class="mobilecontainer7"
+            dsid="mobilecontainer1" data-theme='a'>
+                <link href="Beatsforsale.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="Beatsforsale.js">
+                </script>
+                <div class="mobileimage6_div">
+                    <img class="mobileimage6" src="files/views/assets/image/NewLogo.png" id="j_121"
+                    dsid="banner" name="banner" />
+                </div>
+                <div data-role="fieldcontain" class="mobiletextarea2">
+                    <textarea name="mobiletextarea1" id="j_122" tabIndex="1" dsid="mobiletextarea1"
+                    data-theme='a' class='  Ju mobiletextarea2 '>Find Classic and Chronic beats for your next Hip Hop Project here at Subdwellerz Beatz!!!  Just check out these samples below.</textarea>
+                </div>
+                <audio id="j_123" dsid="mobileaudio1" name="mobileaudio1" class="mobileaudio4" controls='controls'
+                preload="none">
+                    <source src="http://subdwellerzbeatz.com/apps/TIGGZI/beats/MonstahTagged.mp3" type=""
+                    />
+                    <source src="" type="" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio id="j_124" dsid="mobileaudio2" name="mobileaudio2" class="mobileaudio5" controls='controls'
+                preload="none">
+                    <source src="http://subdwellerzbeatz.com/apps/TIGGZI/beats/BackupTagged.mp3" type=""
+                    />
+                    <source src="" type="" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio id="j_125" dsid="mobileaudio3" name="mobileaudio3" class="mobileaudio6" controls='controls'
+                preload="none">
+                    <source src="http://subdwellerzbeatz.com/apps/TIGGZI/beats/IntelligentofficialsTagged.mp3"
+                    type="" />
+                    <source src="" type="" />
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="mobilebutton9_wrapper ">
+                    <a data-role="button" name="mobilebutton5" dsid="mobilebutton5" class=' mobilebutton9'
+                    id='j_126' data-corners='true' data-inline='false' data-theme='a' tabIndex="2">
+                    Buy some beats
+                    </a>
+                </div>
+            </div>
+            <div data-role="footer" class="mobilefooter7" name="mobilefooter1" dsid="mobilefooter1"
+            data-position="fixed" id="j_127" data-theme='a'>
+            </div>
+        </div>
+    </body>
+
+</html>
